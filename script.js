@@ -4,16 +4,22 @@ let computerSelection = '';
     let float = Math.floor(Math.random() * 3);
     console.log(float)
         if (float === 0) {
-            computerSelection = 'Rock';
+            computerSelection = 'rock';
             return computerSelection;
         }
         else if (float === 1) {
-            computerSelection = 'Paper';
+            computerSelection = 'paper';
             return computerSelection;
         }
         else {
-            computerSelection = 'Scissors';
+            computerSelection = 'scissors';
             return computerSelection;
         }
     }
 console.log(computerSelection);
+let playerSelection = ''
+function rockPaperScissors (playerSelection) {
+    if playerSelection.toLowerCase() === 'rock' {
+        
+    }
+}
