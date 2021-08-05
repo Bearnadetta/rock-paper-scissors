@@ -1,10 +1,19 @@
-/* Pseudo-code for Rock Paper Scissors Game:
-When one of the three option blocks is pressed, run the following:
-    playerChoice = block, opponentChoice = random 1/3 chance (assigned to block)
-    display result in results block
-    if playerChoice wins in RPS, increment scoreboard for player. If opponentChoice wins in RPS, increment opponent scoreboard.
-
-    check to see if either player has reached 5 points, if so alert "you win/lose" and reset the game
-    else, reset game
-*/
-alert ('Hey your script sheet is properly linked nice job');
+let computerSelection = '';
+//Randomly returns either rock, paper, or scissors.
+ function computerPlay () {
+    let float = Math.floor(Math.random() * 3);
+    console.log(float)
+        if (float === 0) {
+            computerSelection = 'Rock';
+            return computerSelection;
+        }
+        else if (float === 1) {
+            computerSelection = 'Paper';
+            return computerSelection;
+        }
+        else {
+            computerSelection = 'Scissors';
+            return computerSelection;
+        }
+    }
+console.log(computerSelection);
