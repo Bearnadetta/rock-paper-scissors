@@ -62,7 +62,7 @@ function playRound(playerSelection, computerSelection) {
 //runs the playRound function five times
 function game() {
     for(let i = 0; i < 5; i++) {
-    console.log(playRound(playerSelection, computerSelection));
+    alert(playRound(playerSelection, computerSelection));
     }
 }
 //runs game function on page load
