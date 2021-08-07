@@ -19,7 +19,15 @@ let computerSelection = '';
 console.log(computerSelection);
 let playerSelection = ''
 function rockPaperScissors (playerSelection) {
-    if playerSelection.toLowerCase() === 'rock' {
-        
+    if (playerSelection.toLowerCase() === 'rock') {
+        if (computerSelection === 'rock') {
+            console.log('It\'s a tie!')
+        }
+        else if (computerSelection === 'paper') {
+            console.log('You Lose! Paper beats Rock!');
+        }
+        else if (computerSelection === 'scissors') {
+            console.log('You Win! Rock beats Scissors!');
+        }
     }
 }
