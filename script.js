@@ -1,4 +1,4 @@
-const computerSelection = computerPlay();
+const computerSelection = '';
 //Randomly returns either rock, paper, or scissors.
  function computerPlay () {
     let float = Math.floor(Math.random() * 3);
@@ -14,10 +14,14 @@ const computerSelection = computerPlay();
             return('scissors');
         }
     }
-// logging computer selection to ensure that it matches the float
-console.log(computerSelection);
-const playerSelection = window.prompt('Choose Rock, Paper, or Scissors!', 'rock');
+//prompts the player to type rock, paper, or scissors
+const playerSelection = '';
+// plays a single round of rock paper scissors when called
 function playRound(playerSelection, computerSelection) {
+    playerSelection = window.prompt('Choose Rock, Paper, or Scissors!', '')
+    computerSelection = (computerPlay());
+    // logging computer selection to ensure that it matches the float
+    console.log(computerSelection);
     if (playerSelection.toLowerCase() === 'rock') {
         if (computerSelection === 'rock') {
             return('It\'s a tie!')
@@ -49,9 +53,17 @@ function playRound(playerSelection, computerSelection) {
             return('It\'s a tie!');
         }
     }
+    //catches mistyped answers to the prompt
     else {
         return('please select "rock", "paper", or "scissors"');
     }
 }
 
-console.log(playRound(playerSelection, computerSelection));
+//runs the playRound function five times
+function game() {
+    for(let i = 0; i < 5; i++) {
+    console.log(playRound(playerSelection, computerSelection));
+    }
+}
+//runs game function on page load
+game();
