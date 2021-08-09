@@ -2,6 +2,8 @@ const computerSelection = '';
 const playerSelection = '';
 let playerScore = 0;
 let computerScore = 0;
+// To do: Display score after each round 
+
 //Randomly returns either rock, paper, or scissors.
  function computerPlay () {
     let float = Math.floor(Math.random() * 3);
