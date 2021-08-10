@@ -21,6 +21,8 @@ let computerScore = 0;
     }
 // plays a single round of rock paper scissors when called
 function playRound(playerSelection, computerSelection) {
+    let scoreBoard = (playerScore + '-' + computerScore);
+    console.log(scoreBoard);
     //prompts the player to type rock, paper, or scissors
     playerSelection = window.prompt('Choose Rock, Paper, or Scissors!', '')
     computerSelection = (computerPlay());
@@ -73,8 +75,6 @@ function playRound(playerSelection, computerSelection) {
 function game() {
     for(let i = 0; i < 5; i++) {
     alert(playRound(playerSelection, computerSelection));
-    let scoreBoard = (playerScore + '-' + computerScore);
-    console.log(scoreBoard);
     }
     if (playerScore > computerScore) {
         alert('You are the winner!');
