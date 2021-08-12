@@ -76,10 +76,10 @@ function game() {
     alert(playRound(playerSelection, computerSelection));
     }
     if (playerScore > computerScore) {
-        alert('You are the winner!');
+        alert('You are the winner, ' + playerScore + ' to ' + computerScore + '!');
     }
     else if (computerScore > playerScore) {
-        alert('You have been bested by the machines!');
+        alert('You have been bested by the machines! The computer wins ' + computerScore + ' to ' + playerScore + '!');
     }
     else {
         alert('it\'s a draw!');
