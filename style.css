@@ -1,14 +1,3 @@
-/* future stylings for html page
-body {
-    background-image: linear-gradient(pink, blue);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%;
-}
-h1 {
-    color: rgb(123, 17, 209);
-}
-*/
 body {
     background-color: lightgray;
     color: darkgray;
