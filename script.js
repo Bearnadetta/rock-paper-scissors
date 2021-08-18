@@ -1,12 +1,21 @@
-const computerSelection = '';
-const playerSelection = '';
 let playerScore = 0;
 let computerScore = 0;
+const rockButton = document.querySelector('#rockButton');
+const paperButton = document.querySelector('#paperButton');
+const scissorsButton = document.querySelector('#scissorsButton');
+//plays a round when one of the buttons is clicked
+rockButton.addEventListener('click', () => {
+    playRound('rock', computerPlay());
+});
+paperButton.addEventListener('click', () => {
+    playRound('paper', computerPlay());
+});
+scissorsButton.addEventListener('click', () => {
+    playRound('scissors', computerPlay());
+});
 //Randomly returns either rock, paper, or scissors.
  function computerPlay () {
     let float = Math.floor(Math.random() * 3);
-    //used to log the float and ensure that the random number is accurately read
-    console.log(float)
         if (float === 0) {
             return('rock')
         }
@@ -18,49 +27,53 @@ let computerScore = 0;
         }
     }
 // plays a single round of rock paper scissors when called
-function playRound(playerSelection, computerSelection) {
-    //logs score before round begins
-    let scoreBoard = (playerScore + '-' + computerScore);
-    console.log(scoreBoard);
-    //prompts the player to type rock, paper, or scissors
-    playerSelection = window.prompt('Choose Rock, Paper, or Scissors!', '')
+function playRound(playerSelection,computerSelection) {
     computerSelection = (computerPlay());
     // logging computer selection to ensure that it matches the float
     console.log(computerSelection);
-    if (playerSelection.toLowerCase() === 'rock') {
+    if (playerSelection === 'rock') {
         if (computerSelection === 'rock') {
+            console.log('It\'s a tie!')
             return('It\'s a tie!')
         }
         else if (computerSelection === 'paper') {
             computerScore++;
+            console.log('You Lose! Paper beats Rock!')
             return('You Lose! Paper beats Rock!');
         }
         else if (computerSelection === 'scissors') {
            playerScore++;
+           console.log('You Win! Rock Smashes Scissors!')
             return('You Win! Rock Smashes Scissors!');
         }
-    } else if (playerSelection.toLowerCase() === 'paper') {
+    } else if (playerSelection === 'paper') {
         if (computerSelection === 'rock') {
            playerScore++;
+           console.log('You Win! Paper covers Rock.')
             return('You Win! Paper covers Rock.')
         }
         else if (computerSelection === 'paper') {
+            console.log('It\'s a tie!')
             return('It\'s a tie!');
         }
         else if (computerSelection === 'scissors') {
             computerScore++;
+            console.log('You Lose! Scissors cut Paper!');
             return('You Lose! Scissors cut Paper!');
         }
-    } else if (playerSelection.toLowerCase() === 'scissors') {
+    } else if (playerSelection === 'scissors') {
         if (computerSelection === 'rock') {
            computerScore++;
-            return('You Lose! Rock smashes Scissors!')
+           console.log('You Lose! Rock smashes Scissors!')
+           return('You Lose! Rock smashes Scissors!')
         }
         else if (computerSelection === 'paper') {
             playerScore++;
+            console.log('You Win! Scissors cut Paper!');
             return('You Win! Scissors cut Paper!');
         }
         else if (computerSelection === 'scissors') {
+            console.log('It\'s a tie!')
             return('It\'s a tie!');
         }
     }
@@ -70,20 +83,3 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-//runs the playRound function five times
-function game() {
-    for(let i = 0; i < 5; i++) {
-    alert(playRound(playerSelection, computerSelection));
-    }
-    if (playerScore > computerScore) {
-        alert('You are the winner, ' + playerScore + ' to ' + computerScore + '!');
-    }
-    else if (computerScore > playerScore) {
-        alert('You have been bested by the machines! The computer wins ' + computerScore + ' to ' + playerScore + '!');
-    }
-    else {
-        alert('it\'s a draw!');
-    }
-}
-//runs game function on page load
-game();
