@@ -3,7 +3,8 @@ let computerScore = 0;
 const rockButton = document.querySelector('#rockButton');
 const paperButton = document.querySelector('#paperButton');
 const scissorsButton = document.querySelector('#scissorsButton');
-
+const scoreBoardDiv = document.querySelector('#scoreBoardDiv');
+const textDiv = document.querySelector('#textDiv');
 //plays a round when one of the buttons is clicked
 rockButton.addEventListener('click', () => {
     playRound('rock', computerPlay());
@@ -34,48 +35,54 @@ function playRound(playerSelection,computerSelection) {
     console.log(computerSelection);
     if (playerSelection === 'rock') {
         if (computerSelection === 'rock') {
-            console.log('It\'s a tie!')
-            console.log(playerScore + '-' + computerScore);
+            textDiv.innerHTML = ('It\'s a tie!')
+            scoreBoardDiv.innerHTML = (playerScore + '-' + computerScore);
         }
         else if (computerSelection === 'paper') {
-            console.log('You Lose! Paper beats Rock!')
+            textDiv.innerHTML = ('You Lose! Paper beats Rock!')
             computerScore++;
-            console.log(playerScore + '-' + computerScore);
+            scoreBoardDiv.innerHTML = (playerScore + '-' + computerScore);
+            checkWinner();
         }
         else if (computerSelection === 'scissors') {
-           console.log('You Win! Rock Smashes Scissors!')
+            textDiv.innerHTML = ('You Win! Rock Smashes Scissors!')
            playerScore++;
-           console.log(playerScore + '-' + computerScore);
+           scoreBoardDiv.innerHTML = (playerScore + '-' + computerScore);
+           checkWinner();
         }
     } else if (playerSelection === 'paper') {
         if (computerSelection === 'rock') {
-           console.log('You Win! Paper covers Rock.')
+            textDiv.innerHTML = ('You Win! Paper covers Rock.')
            playerScore++;
-           console.log(playerScore + '-' + computerScore);
+           scoreBoardDiv.innerHTML = (playerScore + '-' + computerScore);
+           checkWinner();
         }
         else if (computerSelection === 'paper') {
-            console.log('It\'s a tie!')
-            console.log(playerScore + '-' + computerScore);
+            textDiv.innerHTML = ('It\'s a tie!')
+            scoreBoardDiv.innerHTML = (playerScore + '-' + computerScore);
         }
         else if (computerSelection === 'scissors') {
-            console.log('You Lose! Scissors cut Paper!');
+            textDiv.innerHTML = ('You Lose! Scissors cut Paper!');
             computerScore++;
-            console.log(playerScore + '-' + computerScore);
+            scoreBoardDiv.innerHTML = (playerScore + '-' + computerScore);
+            checkWinner();
         }
     } else if (playerSelection === 'scissors') {
         if (computerSelection === 'rock') {
-           console.log('You Lose! Rock smashes Scissors!')
+            textDiv.innerHTML = ('You Lose! Rock smashes Scissors!')
            computerScore++;
-           console.log(playerScore + '-' + computerScore);
+           scoreBoardDiv.innerHTML = (playerScore + '-' + computerScore);
+           checkWinner();
         }
         else if (computerSelection === 'paper') {
-            console.log('You Win! Scissors cut Paper!');
+            textDiv.innerHTML = ('You Win! Scissors cut Paper!');
             playerScore++;
-            console.log(playerScore + '-' + computerScore);
+            scoreBoardDiv.innerHTML = (playerScore + '-' + computerScore);
+            checkWinner();
         }
         else if (computerSelection === 'scissors') {
-            console.log('It\'s a tie!')
-            console.log(playerScore + '-' + computerScore);
+            textDiv.innerHTML = ('It\'s a tie!')
+            scoreBoardDiv.innerHTML = (playerScore + '-' + computerScore);
         }
     }
     
@@ -84,4 +91,21 @@ function playRound(playerSelection,computerSelection) {
         return('please select "rock", "paper", or "scissors"');
     }
 }
+const checkWinner = function() {
+    if (playerScore >= 5 ) {
+        alert('You did it! You won!');
+        gameStart();
+    }else if (computerScore >= 5 ) {
+        alert('You have been bested by the machines');
+        gameStart();
+    }
+}
 
+const gameStart = function() {
+    playerScore = 0;
+    computerScore = 0;
+    scoreBoardDiv.innerHTML = (playerScore + '-' + computerScore);
+    textDiv.innerHTML = ('Choose Rock, Paper, or Scissors to start a new game!');
+}
+
+window.onload = gameStart;
