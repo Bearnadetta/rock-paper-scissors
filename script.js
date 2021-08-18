@@ -3,7 +3,6 @@ let computerScore = 0;
 const rockButton = document.querySelector('#rockButton');
 const paperButton = document.querySelector('#paperButton');
 const scissorsButton = document.querySelector('#scissorsButton');
-let scoreBoard = (playerScore + '-' + computerScore);
 
 //plays a round when one of the buttons is clicked
 rockButton.addEventListener('click', () => {
@@ -36,41 +35,47 @@ function playRound(playerSelection,computerSelection) {
     if (playerSelection === 'rock') {
         if (computerSelection === 'rock') {
             console.log('It\'s a tie!')
-            return('It\'s a tie!');
+            console.log(playerScore + '-' + computerScore);
         }
         else if (computerSelection === 'paper') {
             console.log('You Lose! Paper beats Rock!')
-            return('You Lose! Paper beats Rock!');
+            computerScore++;
+            console.log(playerScore + '-' + computerScore);
         }
         else if (computerSelection === 'scissors') {
            console.log('You Win! Rock Smashes Scissors!')
-            return('You Win! Rock Smashes Scissors!');
+           playerScore++;
+           console.log(playerScore + '-' + computerScore);
         }
     } else if (playerSelection === 'paper') {
         if (computerSelection === 'rock') {
            console.log('You Win! Paper covers Rock.')
-            return('You Win! Paper covers Rock.');
+           playerScore++;
+           console.log(playerScore + '-' + computerScore);
         }
         else if (computerSelection === 'paper') {
             console.log('It\'s a tie!')
-            return('It\'s a tie!');
+            console.log(playerScore + '-' + computerScore);
         }
         else if (computerSelection === 'scissors') {
             console.log('You Lose! Scissors cut Paper!');
-            return('You Lose! Scissors cut Paper!');
+            computerScore++;
+            console.log(playerScore + '-' + computerScore);
         }
     } else if (playerSelection === 'scissors') {
         if (computerSelection === 'rock') {
            console.log('You Lose! Rock smashes Scissors!')
-           return('You Lose! Rock smashes Scissors!');
+           computerScore++;
+           console.log(playerScore + '-' + computerScore);
         }
         else if (computerSelection === 'paper') {
             console.log('You Win! Scissors cut Paper!');
-            return('You Win! Scissors cut Paper!');
+            playerScore++;
+            console.log(playerScore + '-' + computerScore);
         }
         else if (computerSelection === 'scissors') {
             console.log('It\'s a tie!')
-            return('It\'s a tie!');
+            console.log(playerScore + '-' + computerScore);
         }
     }
     
