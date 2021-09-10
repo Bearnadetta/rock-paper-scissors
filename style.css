@@ -1,4 +1,5 @@
 body {
+    margin: 0;
     background-color: lightgray;
     color: darkgray;
 }
@@ -6,13 +7,21 @@ body {
     margin: auto;
     width: 50%;
     padding: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 #buttonDiv {
     margin: auto;
     padding: 20px;
     text-align: center;
     justify-content: center;
+} 
+
+.button:hover {
+    cursor: pointer;
 }
+
 #gameText {
     margin: auto;
     width: 50%;
