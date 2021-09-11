@@ -22,7 +22,7 @@ body {
     padding: 30px;
     margin: 20px;
     border-radius: 15px;
-    border: 5px groove grey;
+    border: 5px groove rgb(153, 151, 151);
     background-color: lightgray;
 }
 

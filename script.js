@@ -1,3 +1,4 @@
+//establishing global variables
 let playerScore = 0;
 let computerScore = 0;
 const rockButton = document.querySelector('#rockButton');
