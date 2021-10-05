@@ -72,6 +72,7 @@ function playRound(playerSelection,computerSelection) {
     checkWinner();
 
 }
+//checks for a winner after the round ends
 const checkWinner = function() {
     if (playerScore >= 5 ) {
         alert('You did it! You won!');
@@ -81,7 +82,7 @@ const checkWinner = function() {
         gameStart();
     }
 }
-
+//establishes score of 0-0 
 const gameStart = function() {
     playerScore = 0;
     computerScore = 0;
