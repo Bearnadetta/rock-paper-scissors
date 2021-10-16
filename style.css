@@ -3,6 +3,9 @@ body {
     background-color: lightgray;
     color: darkgray;
 }
+html{
+    margin: 0;
+}
 #titleDiv {
     margin: auto;
     width: 50%;
